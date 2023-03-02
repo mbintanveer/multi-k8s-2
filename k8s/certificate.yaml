@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+
+kind: Certificate
+metadata:
+  name: kubernetesdemo.mlxpos-com-tls
+spec:
+  secretName: kubernetesdemo.mlxpos.com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: kubernetesdemo.mlxpos.com
+  dnsNames:
+    - kubernetesdemo.mlxpos.com
+    - www.kubernetesdemo.mlxpos.com
